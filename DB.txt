@@ -1,0 +1,208 @@
+how to create a db
+
+syntax:
+create database database_name();
+drop database database_name; #will drop the whole of the table
+delete database database_name: #will only delete the content of the table.
+
+to backup a db:
+backup database database_name to disk="C:\Users\USER\Documents\300 LEVEL PDFS"
+
+
+for table :
+create table table_name;
+drop table table_name;
+truncate table table_name;  #to delete a table
+
+
+#to alter a table:
+syntax
+alter table table_name
+ex: alter table employee;
+to add:
+syntax
+add column_name datatype(size);
+ex: add salary varchar(20);
+    add name varchar(20)
+    add address varchar(20)
+  drop salary:
+  syntax is 
+alter table table_name
+drop column column_name;
+ex: alter table employee;
+    dop column salary;
+
+
+
+
+to modify: means to change
+ex:
+alter table employee;
+modify salary int(10)
+
+mysql datatype
+
+it is categorise into 3: string, numeric and date and time.
+#STRING datatype:
+1.char(size) has a fixed size and contain letters , numeric and....
+2.varchar(size) has a variable string lenght and can contain alphabet ,numbers and special characters
+3.binary(size) is equivalent to char() but stores binary byte string 
+4.text(size)
+5. BLOB(size) binary large object
+
+#NUMERIC datatype:
+1. bit(size)
+2.tinyint(size)
+3.bull
+4.bulean
+5.smallint(size)
+6. mediumint(size)
+7.int(size)
+
+#DATE AND TIME datatype:
+1.date
+2.datetime(format)
+3.timestamp
+4.time
+5.year
+
+#SQL CONSTRAINT: to specify rules for database
+1.NOT NULL- ensures the column canot have a null value
+2.UNIQUE- ensures all values in a column are diff
+3.PRIMARY KEY- combination of notnull and unique; PRIMARY key is a key that uniquely identifies a table
+4.FOREIGN KEY- prevents actions that will destroy link between tables
+5.CHECK- ensures the values in a column satisfies a specific condition
+6.DEFAULT- to set a value for a column if no value is specified
+7.CREATE INDEX- to create and retrieve data from the database quickly
+
+example:
+create table employee(
+employee_id int(10) NOT NULL UNIQUE,
+name varchar(200) NOT NULL,
+age int(3) NOT NULL,
+salary varchar(20) NOT NULL
+
+);
+alter table employee
+modify salary int(39) NOT NULL;
+
+
+__________________________
+SQL SELECT: to select data from data base,data retured is stored in a result table called the result set
+__________________________
+syntax;
+SELECT column1, column2,... FROM table_name
+for all fields of a table; SELECT* FROM table_name 
+example; to select customername and city from table customer;
+SELECT customername,city FROM customer;
+
+SQL SELECT DISTINCT: dsame syntax as SELECT but it is used to return only diff values
+
+SQL SELECT COUNT DISTINCT: lists the number of diff occurrence
+example: SELECT count (DISTINCT country) FROM customer;
+
+
+__________________________
+SQL WHERE CLAUSE:to filter records, it is used in select statement, update,delete, etc
+__________________________
+syntax;
+SELECT column1, column2, ....
+FROM table_name
+WHERE condition;
+example;
+to select all the customers from the country mexico in the customers table.
+SELECT* FROM customers
+WHERE county='mexico';
+
+text fields are enclosed in a single quote while numeric fields should not be enclosed in a quote.
+eg. select* from customers WHERE customerid=1;
+
+operators in WHERE CLAUSE; =,>,<,>=,<=,<>(not equal), BETWEEN, LIKE, IN.
+__________________________
+SQL AND, OR, & NOT;
+__________________________
+AND- TRUE if all the conditions are TRUE
+syntax;
+select column1,column2,..
+from table_name
+where condition1 AND condition2 AND condition3...;
+
+example;
+select*from customerS
+where country='germany' AND city='berlin' AND condition3...;
+
+
+OR- TRUE if any of the condition is TRUE
+syntax;
+select column1,column2,..
+from table_name
+where condition1 OR condition2 OR condition3...;
+
+example;
+select*from customerS
+where country='germany' OR city='berlin' ;
+
+
+NOT- TRUE if the condition is not true.
+syntax;
+select column1,column2,..
+from table_name
+where NOT condition; 
+
+example;
+select*from customerS
+where NOT country='germany' 
+
+combination;
+select*from customerS
+where country='germany' AND (city='berlin' OR city='munche');
+
+
+__________________________
+SQL INSERT INTO statement
+__________________________
+it is used to insert new record in a table
+1.specifying both d column name and the value to be inserted
+syntax;
+insert into table_name(column1,column2,column3,...)
+values (value1,value2,value3,..);
+
+2.if its all the column, we do not need to specify d columnnames,
+syntax;
+insert into table_name
+values(value1,value2,value3,...);
+
+__________________________
+SQL ORDER BY keyword
+__________________________
+used to sort the result-set in ascending or descending order. it sort in ascending order by default but to sort the records in descending order,use the DESC keyword.
+syntax:
+SELECT column1,column2,column3,.....
+FROM table_name
+ORDER BY column1, column2,...
+ASC|DESC;
+#ORDER BY several columns 
+syntax
+select * from TGT_BOD
+order by name ,location ;
+selects all columns from TGT_BOD , sorted by 'name' and 'location' column . this means that it orders by name, but if some rows have the same name,it orders them by location.
+
+SQL NULL; a null value is diff from a zero value or a field with spaces. 
+a field with a null value is the one that has been left blank during record creation.
+#how to test: it is not possible to test with comparisons like(=,<,> or <>).
+syntax: IS NULL is used to test for empty values
+SELECT column_name
+FROM table_name
+WHERE column_name IS NULL
+
+syntax: IS NOT NULL is used to test non-empty value 
+SELECT column_name
+FROM table_name
+WHERE column_name IS NOT NULL
+
+##SQL UPDATE statement is used to modify the existing records in a table...
+syntax;
+UPDATE table_name
+SET column1= value1, column2=value2,.....
+WHERE condition
+if the where' clause is ommited ,all records im the table will be updated

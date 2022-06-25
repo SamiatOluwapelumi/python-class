@@ -1,2 +1,0 @@
-email,username,password
-sss3@gmail.com,dddd3,www3
