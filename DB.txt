@@ -42,7 +42,7 @@ modify salary int(10)
 
 mysql datatype
 
-it is categorise into 3: string, numeric and date and time.
+it is categorise into 3: string, numeric and date & time.
 #STRING datatype:
 1.char(size) has a fixed size and contain letters , numeric and....
 2.varchar(size) has a variable string lenght and can contain alphabet ,numbers and special characters
@@ -53,7 +53,7 @@ it is categorise into 3: string, numeric and date and time.
 #NUMERIC datatype:
 1. bit(size)
 2.tinyint(size)
-3.bull
+3.bool
 4.bulean
 5.smallint(size)
 6. mediumint(size)
