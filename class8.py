@@ -24,33 +24,33 @@
 
 #looping
 
-# dic={1:'ray',2:'samiat',3:'daniel'}
+dic={1:'ray',2:'samiat',3:'daniel'}
 # for i in dic.keys():
 #    a=i**2
 #    print(a)
 
-# dic={i**2 for i in dic.keys()}
-# print(dic) 
+dic={i**2 for i in dic.keys()}
+print(dic) 
 
 
-questions=['what is your name? ', 'your age? ', 'are you tall or short? ', 'what is your complexion? ', 'how are you? ']
-answers=['samiat' , '22', 'short', 'dark', 'i am fine']
-index=int((input('pick a number:')))      # index= number-1
+# questions=['what is your name? ', 'your age? ', 'are you tall or short? ', 'what is your complexion? ', 'how are you? ']
+# answers=['samiat' , '22', 'short', 'dark', 'i am fine']
+# index=int((input('pick a number:')))      # index= number-1
 # for questionNumber in range(0, len(questions)):
 #     # numberRange=int((input('pick a number: from 0 to 4')))
 #  print(questions[question ])
     
 
-for question in questions:
-    for answer in answers:
-       score=0
+# for question in questions:
+    # for answer in answers:
+    #    score=0
 
-        # question=index-1
+    #     # question=index-1
         # print(questions[question])
-    answera=input(question)
-    if answer==question:
-            score+=20
-            print("bravo! You just got: ", score, "points")
+    # answera=input(question)
+    # if answer==question:
+    #         score+=20
+    #         print("bravo! You just got: ", score, "points")
      
 
 
